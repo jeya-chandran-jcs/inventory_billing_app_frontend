@@ -43,8 +43,8 @@ export default function Home() {
   <Layout>
   <Header style={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between', background: '#fff' }}>
     <div style={{ display: 'flex', alignItems: 'center', flex: '1' }}>
-        <Button type="dashed" icon={<RightOutlined />} onClick={()=>navigate(1)} />
-        <h1 style={{ margin: '0', whiteSpace: 'nowrap', overflow: 'hidden', textOverflow: 'ellipsis', width: '100%' }}>Inventory</h1>
+        <Button type="dashed" icon={<RightOutlined />} onClick={()=>navigate("/cart")} />
+        <h1 style={{ margin: '0', whiteSpace: 'nowrap', overflow: 'hidden', textOverflow: 'ellipsis', width: '100%',marginLeft:"5rem" }}>Inventory</h1>
     </div>
     <div>
       <Button type="text" icon={<ShoppingCartOutlined />} onClick={goToCartPage}>
@@ -52,7 +52,7 @@ export default function Home() {
           Cart
         </Badge>
       </Button>
-      <Button type="primary" icon={<BulbOutlined />} onClick={()=>navigate("/login")}>
+      <Button type="primary" icon={<BulbOutlined />} onClick={()=>navigate("/")}>
         LogOut
       </Button>
     </div>
@@ -75,9 +75,9 @@ export default function Home() {
       ))}
     </div>
    }
-   <div className='d-flex justify-content-center align-items-center m-3'>
-    <Button type="dashed"  onClick={goToCartPage} >Checkout</Button>
-   </div>
+      <div className='d-flex justify-content-center align-items-center m-3'>
+        <Button type="dashed"  onClick={goToCartPage} >Checkout</Button>
+      </div>
   </Content>
 </Layout>
 

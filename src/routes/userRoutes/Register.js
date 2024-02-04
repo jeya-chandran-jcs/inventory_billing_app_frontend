@@ -35,7 +35,7 @@ export default function Register() {
         console.log("register response",response)
          message.success("registered successfully")
           setloaing(false)
-          navigate("/login")
+          navigate("/")
       }catch(err){
         message.error("user Alreay exist")
         setloaing(false)

@@ -70,7 +70,7 @@ export default function Bill() {
           <Button type="primary"  style={{marginRight:"10px"}} onClick={handlePrint}>
             Print
           </Button>
-          <Button type="primary" icon={<BulbOutlined />} onClick={()=>navigate("/login")}>
+          <Button type="primary" icon={<BulbOutlined />} onClick={()=>navigate("/")}>
             LogOut
           </Button>
           </div>
@@ -109,7 +109,7 @@ export default function Bill() {
                   <tr key={cartItem._id}>
                     <td>{cartItem.name}</td>
                     <td>{cartItem.price}</td>
-                    <td>{cartItem.quantity || 1}</td> {/* This line should correctly display the quantity */}
+                    <td>{cartItem.quantity || 1}</td>
                   </tr>
                 ))}
               </tbody>

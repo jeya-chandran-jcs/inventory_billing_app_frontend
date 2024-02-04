@@ -47,8 +47,11 @@ export default function Register() {
               <Input  id='password' placeholder='password' prefix={<LockOutlined />}/>
             </Form.Item>
             
+            <div>
+              <p className='float-start text-primary pointer'  onClick={()=>navigate("/register")}><b>Create Account</b> </p>
             <p className='float-end text-primary pointer' onClick={()=>navigate("/forget")} style={{ fontWeight: 'bold' }}>
             forget password</p>
+            </div>
 
             <Button type='primary' htmlType='submit' style={{width:"100%"}}>Login</Button>
 

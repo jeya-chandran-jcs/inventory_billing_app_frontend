@@ -24,3 +24,18 @@
   transform: translate(-50%, -50%);
 }
 
+.pointer{
+  cursor: pointer;
+}
+
+.bill-details-container {
+  max-height: 90vh; /* Set a maximum height for the container */
+  overflow-y: auto; /* Add vertical scrollbar if the content exceeds the height */
+}
+
+/* Add the following CSS to make the table headers sticky */
+.items-table {
+  position: sticky;
+  top: 0;
+  background-color: #f0f0f0; 
+}

@@ -20,7 +20,7 @@ export default function Item({item,index}) {
     <div key={index}>
       {Loading ?  <Spin className="spinner-border" role="status" />  :
       
-        <Card  style={{width: 250,marginTop:"50px"}} hoverable cover={<img style={{height:"250px",width:"100%",objectFit:"contain"}} src={item.image} alt={item.name}/>}>
+        <Card  style={{width: 250,marginTop:"10px"}} hoverable cover={<img style={{height:"250px",width:"100%",objectFit:"contain"}} src={item.image} alt={item.name}/>}>
             
             <Meta title={item.name} description={item.description}/>
             <h4>Price: {item.price}</h4>

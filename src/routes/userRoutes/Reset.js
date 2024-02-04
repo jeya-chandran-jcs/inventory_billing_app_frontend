@@ -31,8 +31,8 @@ export default function Register() {
       axios
         .post(`${API}/user/reset-password`, values)
         .then((res) => {
-          message.success("password reset successfully");
-          navigate("/login");
+          message.success("password reset success");
+          navigate("/");
         })
         .catch((err) => {
           message.error("password reset failed!! please check your email, otp and password");

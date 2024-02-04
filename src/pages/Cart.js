@@ -103,6 +103,7 @@ const decreaseQuantity = (record) => {
     setsubToal(temp)
   },[cartItems])
   
+  
   const handleFinish = (values) => {
     const reqObject = {
         ...values,
@@ -115,9 +116,9 @@ const decreaseQuantity = (record) => {
         })),
         tax: Number((subTotal / 100) * 10),
         totalAmount: Number(subTotal + (subTotal / 100) * 10),
-        userId: JSON.parse(localStorage.getItem("user-data"))._id,
+        // userId: JSON.parse(localStorage.getItem("user-data"))._id, use for offline pc only
     };
-    console.log(reqObject)
+    console.log("reqObject",reqObject.userId)
     setLoading(true)
     axios.post(`${API}/bill/add-bill`,reqObject)
     .then((res)=>{
@@ -174,12 +175,12 @@ const decreaseQuantity = (record) => {
     <Layout>
         <Header style={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between', background: '#fff' }}>
             <div style={{ display: 'flex', alignItems: 'center', flex: '1' }}>
-            <Button type="dashed" icon={<LeftOutlined />} onClick={()=>navigate(-1)}/>
-            <Button type="dashed" icon={<RightOutlined />} onClick={()=>navigate(1)} />
+            <Button type="dashed" icon={<LeftOutlined />} onClick={()=>navigate("/home")}/>
+            <Button type="dashed" icon={<RightOutlined />} onClick={()=>navigate("/bill")} />
             <h1 style={{ margin: '0', whiteSpace: 'nowrap', overflow: 'hidden', textOverflow: 'ellipsis', width: '100%' }}>Cart</h1>
             </div>
           <div>
-          <Button type="primary" icon={<BulbOutlined />} onClick={()=>navigate("/login")}>
+          <Button type="primary" icon={<BulbOutlined />} onClick={()=>navigate("/")}>
             LogOut
           </Button>
           </div>
@@ -199,13 +200,18 @@ const decreaseQuantity = (record) => {
 
        <Modal title="Charge Bill" onCancel={()=>setbillCharge(false)} open={billCharge} footer={false}>
             <Form onFinish={handleFinish}>
-                <Form.Item  name="customerName" label="Customer Name">
-                    <input />
+                <Form.Item  name="customerName" label="Customer Name" 
+                rules={[{ required: true, message: 'Please enter your name' }]}>
+                    <input id="customerName" placeholder="customer name"/>
                 </Form.Item>
-                <Form.Item  name="customerPhone" label="Customer Ph no:">
-                    <input />
+                
+                <Form.Item  name="customerPhone" label="Customer Ph no:" 
+                rules={[{ required: true, message: 'Please enter your number' }]}>
+                    <input id="customerPhone" placeholder="customer number" />
                 </Form.Item>
-                <Form.Item  name="paymentMode" label="Payment Type">
+                
+                <Form.Item  name="paymentMode" label="Payment Type" 
+                rules={[{ required: true, message: 'Please select payment type'}]}>
                     <Select>
                         <Select.Option value="Cash">Cash</Select.Option>
                         <Select.Option value="Card">Card</Select.Option>
