@@ -105,6 +105,11 @@ const decreaseQuantity = (record) => {
   
   
   const handleFinish = (values) => {
+    const {customerPhone}=values
+    if (isNaN(customerPhone)) {
+        message.error('Please enter a valid phone number');
+        return;
+      }
     const reqObject = {
         ...values,
         subTotal,

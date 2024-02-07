@@ -1,4 +1,4 @@
-import { Card, Spin } from 'antd'
+import { Card, Spin, message } from 'antd'
 import React, { useState } from 'react'
 import { useDispatch } from 'react-redux'
 import { addToCart } from '../redux/itemSlice'
@@ -13,6 +13,7 @@ export default function Item({item,index}) {
       setLoading(true)
       console.log("add to cart")
       dispatch(addToCart(item))
+      message.success(`${item.name} added to cart`)
       setLoading(false)
     }
     

@@ -60,17 +60,17 @@ export default function Bill() {
     <Layout>
       <Header style={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between', background: '#fff' }}>
             <div style={{ display: 'flex', alignItems: 'center', flex: '1' }}>
-            <Button type="text" icon={<LeftOutlined />} onClick={()=>navigate("/home")}>
+            <Button type="text" icon={<LeftOutlined />} style={{float:"left"}} onClick={()=>navigate("/home")}>
               Home
               </Button>
               <h1 style={{ margin: '0', whiteSpace: 'nowrap', overflow: 'hidden', textOverflow: 'ellipsis', width: '100%' }}>
                 Billing</h1>
             </div>
-          <div>
-          <Button type="primary"  style={{marginRight:"10px"}} onClick={handlePrint}>
+          <div style={{ display: 'flex', alignItems: 'center',justify : 'space-between' ,columnGap:"1rem"}}>
+          <Button type="dashed"   onClick={handlePrint}>
             Print
           </Button>
-          <Button type="primary" icon={<BulbOutlined />} onClick={()=>navigate("/")}>
+          <Button type="primary"  icon={<BulbOutlined />} onClick={()=>navigate("/")}>
             LogOut
           </Button>
           </div>
@@ -115,8 +115,8 @@ export default function Bill() {
               </tbody>
               </table>
             </div>
-
-            <div className="bill-summary">
+          <div>
+            <div className="bill-summary ">
               <h4>Sub Total: <span>{item.subTotal}</span></h4>
               <h4>Tax: <span>{item.tax}</span></h4>
               <h4>Total: <span>{item.totalAmount}</span></h4>
@@ -125,6 +125,7 @@ export default function Bill() {
             <div className="payment-details">
               <h4>Payment Mode: <span>{item.paymentMode}</span></h4>
             </div>
+          </div>
           </div>
         ))}
       </div>

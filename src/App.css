@@ -29,11 +29,11 @@
 }
 
 .bill-details-container {
-  max-height: 90vh; /* Set a maximum height for the container */
-  overflow-y: auto; /* Add vertical scrollbar if the content exceeds the height */
+  max-height: 90vh; 
+  overflow-y: auto; 
 }
 
-/* Add the following CSS to make the table headers sticky */
+
 .items-table {
   position: sticky;
   top: 0;

@@ -46,7 +46,7 @@ export default function Home() {
         <Button type="dashed" icon={<RightOutlined />} onClick={()=>navigate("/cart")} />
         <h1 style={{ margin: '0', whiteSpace: 'nowrap', overflow: 'hidden', textOverflow: 'ellipsis', width: '100%',marginLeft:"5rem" }}>Inventory</h1>
     </div>
-    <div>
+    <div style={{ display: 'flex', alignItems: 'center' }}>
       <Button type="text" icon={<ShoppingCartOutlined />} onClick={goToCartPage}>
         <Badge count={cartItems.length} overflowCount={9} onClick={goToCartPage}>
           Cart
